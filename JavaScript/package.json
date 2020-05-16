@@ -1,0 +1,25 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "JS in detail",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markandan/Frontend-Focus/tree/JavaScript"
+  },
+  "keywords": [
+    "JavaScript",
+    "basics",
+    "fundamentals",
+    "concepts",
+    "algorithms"
+  ],
+  "author": "Markandan R",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
