@@ -5,7 +5,7 @@ Explains concepts related to handling numbers in JS
 
 0.1 + 0.2 is equal to 0.30000000000000004 and not 0.3. Yes you read it correctly, 0.1 + 0.2 is not equal to 0.3.
 
-Primitive value corresponding to a double-precision 64-bit binary format IEEE 754-2008 value
+Numbers are the primitive values corresponding to a double-precision 64-bit binary format IEEE 754-2008 value
 
 JS as a language isn’t broken, it’s doing floating point math. Computers can only natively store integers, so they need some way of representing decimal numbers. This representation is not perfectly accurate. This is why, more often than not, 0.1 + 0.2 != 0.3.
 
