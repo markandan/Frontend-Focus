@@ -1,0 +1,13 @@
+.box {
+  width: 200px;
+  height: 200px;	
+  padding: 20px;
+  border: 5px solid green;
+  margin: 10px;
+  background-color: #000;
+  color: #FFF;
+}
+
+.border-box{
+  box-sizing: border-box;
+}
