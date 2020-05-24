@@ -3,7 +3,7 @@ Explains concepts related to handling numbers in JS
 
 * [Double Precision Flaoting Point Number](#Double-precision-floating-point-Numbers)
 * [Special Numeric Values](#Special-Numeric-Values)
-
+* [Binary, Octal & Hexa numbers](#Binary,-Hexadecimal-and-Octal-numbers) 
 
 ##  Double precision floating-point Numbers
 
