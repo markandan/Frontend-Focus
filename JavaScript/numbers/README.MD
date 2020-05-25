@@ -3,7 +3,8 @@ Explains concepts related to handling numbers in JS
 
 * [Double Precision Flaoting Point Number](#Double-precision-floating-point-Numbers)
 * [Special Numeric Values](#Special-Numeric-Values)
-* [Binary, Octal & Hexa numbers](#Binary,-Hexadecimal-and-Octal-numbers) 
+* [Binary, Octal & Hexa numbers](#Binary,-Hexadecimal-and-Octal-numbers)
+* [Rounding Number](#rounding-numbers)
 
 ##  Double precision floating-point Numbers
 
@@ -156,8 +157,92 @@ console.log( parseInt('377', 8) ); // 255
 ```
 > Note: parseFloat doesn't have the second parameter.
 
+### References
 * [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
 * [ECMA Script - parseFloat](http://www.ecma-international.org/ecma-262/6.0/#sec-parsefloat-string)
 
 * [ECMA Script - parseInt](http://www.ecma-international.org/ecma-262/6.0/#sec-parseint-string-radix)
+
+## Rounding Numbers
+
+```JS
+let num = 100.335;
+let num2 = -100.335;
+
+console.log(Math.floor(num), Math.floor(num2));
+
+console.log(Math.ceil(num), Math.ceil(num2));
+
+console.log(Math.round(num), Math.round(num2));
+
+console.log(Math.trunc(num), Math.trunc(num2));
+```
+
+What will be the output of the above code?
+
+There are various built-in functions that help in rounding a number.
+
+* Math.floor()
+* Math.ceil()
+* Math.round()
+* Math.trunc()
+
+### Math.floor() 
+
+Returns the greatest Number value that is not greater than x and is an integer.
+
+In the example given, it'll return **100 and -101**
+
+
+### Math.ceil() 
+
+Returns the smallest Number value that is not less than x and is an integer.
+
+In the example given, it'll return **100 and -101**
+
+### Math.round()
+
+Returns the closest number. If two numbers are closer, then it returns the number which is closer to +Infinity
+
+In the example given, it'll return **100 and -100**
+
+### Math.trunc()
+
+Returns the integer par removing the fractions.
+
+In the example given, it'll return **100 and -100**
+
+| Value  | Math.floor | Math.ceil | Math.round | Math.trunc |
+|---|---|---|---|---|
+|100.335|100|101|100|100|
+|100.665|100|101|101|100|
+|-100.335|-101|-100|-100|-100|
+|-100.665|-101|-100|-101|-100|
+
+> All above functions return an integer value. If number of decimals are required then We should use Number.toFixed() method.
+
+### toFixed(numberOfDigits)
+
+toFixed() is used to round the number to the specified number of digits after decimal point as specified.
+
+toFixed() returns a string a value
+
+```JS
+let num = 100.336;
+console.log(num.toFixed(1));
+```
+
+The above code will print **"100.3"**
+
+```JS
+let num = 100.336;
+console.log(num.toFixed(2));
+```
+
+The above code will print **"100.34"**. This rounds up or down to the nearest value, similar to `Math.round`.
+
+### References
+
+* [Mozilla MDN Math functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+* [ECMA script](http://www.ecma-international.org/ecma-262/6.0/#sec-math-object)
