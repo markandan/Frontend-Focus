@@ -45,7 +45,7 @@ The `margin` property can contain one/two/three/four values. Values can be posit
 
 In the example provided, the applied margins will be ***20px, 10px, 10px, and 10px***
 
-> Note: Same logic applied to padding, and border-width and in same order.. All these three properties `margin`, `padding` and `border-width` are shorthand for **top, right, bottom and left** values
+> Note: Same logic applied to padding, and border-width and in same order.. All the properties `margin`, `padding`, `border-width`, `border-style` and `border-color` are shorthand for **top, right, bottom and left** values
 
 > Note: The content width depends on the `box-sizing` property. Please refer [box-model](https://github.com/markandan/Frontend-Focus/tree/master/CSS/box-model) explained earlier.
 

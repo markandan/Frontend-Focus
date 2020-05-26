@@ -6,3 +6,5 @@ Basic to advanced concepts in CSS
 * [Collapsing Margin](https://github.com/markandan/Frontend-Focus/tree/master/CSS/collapse-margin)
 
 * [Margin & Padding](https://github.com/markandan/Frontend-Focus/tree/master/CSS/margins-padding)
+
+* [Borders](https://github.com/markandan/Frontend-Focus/tree/master/CSS/borders)

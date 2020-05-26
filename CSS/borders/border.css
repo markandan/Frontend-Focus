@@ -1,0 +1,25 @@
+body {
+  color: green;
+}
+.box {
+  color: orange;
+	width: 200px;
+	height: 200px;
+  background: #CCC;
+  border: 2px solid;
+}
+.box2 {
+	width: 200px;
+	height: 200px;
+  background: #CCC;
+  border: 2px solid;
+}
+.parent {
+  color: red;
+}
+.box3 {
+	width: 200px;
+	height: 200px;
+  background: #CCC;
+  border: 2px solid;
+}
