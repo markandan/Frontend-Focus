@@ -5,6 +5,8 @@ Explains concepts related to handling numbers in JS
 * [Special Numeric Values](#Special-Numeric-Values)
 * [Binary, Octal & Hexa numbers](#Binary,-Hexadecimal-and-Octal-numbers)
 * [Rounding Number](#rounding-numbers)
+* [Other ways of writing numbers](More-ways-of-writing-numbers)
+* [Static Properties](#static-properties)
 
 ##  Double precision floating-point Numbers
 
@@ -246,3 +248,71 @@ The above code will print **"100.34"**. This rounds up or down to the nearest va
 
 * [Mozilla MDN Math functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 * [ECMA script](http://www.ecma-international.org/ecma-262/6.0/#sec-math-object)
+
+## More ways of writing numbers
+
+What is the output of the following code snippet?
+
+```JS
+let a = 72e4;
+let b = 72e-4;
+console.log(a, b);
+
+```
+
+In JavaScript, we shorten a number by appending the letter `"e"` to the number and specifying the zeroes count
+
+```JS
+1e4 = 1 * 10000 // 10000
+1.43e4 = 1.43 * 10000 //14300
+```
+
+We can also use "e" along with negtaive numbers
+
+```JS
+1e-4 = 1 / 10000 // 0.0001
+1.43e-4 = (1.43)/10000 // 0.000143
+```
+
+So, for the question,the output will be **72000 and 0.0072**
+
+```JS
+let a = 72e4;
+let b = 72e-4;
+console.log(a, b); // 72000 and 0.0072
+```
+
+##  Static properties
+
+There are few static properties available in number. 
+
+> Note: Please check the browser compatability before using the static properties
+
+* `Number.EPSILON`
+  * The Number.EPSILON property represents the difference between 1 and the smallest floating point number greater than 1. Returns a value `2.220446049250313e-16`
+
+* Number.MAX_SAFE_INTEGER
+  * The maximum safe integer in JavaScript (2<sup>53</sup> - 1). 
+
+* Number.MAX_VALUE
+  * The largest positive representable number. (1.7976931348623157e+308)
+
+* Number.MIN_SAFE_INTEGER
+  * The minimum safe integer in JavaScript (-(2<sup>53</sup> - 1)).
+
+* Number.MIN_VALUE
+  * The smallest positive representable number—that is, the positive number closest to zero (without actually being zero). (5e-324)
+
+* Number.NaN
+  * Special "Not a Number" value.
+  
+* Number.NEGATIVE_INFINITY
+  * Secial value representing negative infinity. Returned on overflow.
+
+Number.POSITIVE_INFINITY
+  * Special value representing infinity. Returned on overflow.
+
+### References
+
+* [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+* [ECMA Script](http://www.ecma-international.org/ecma-262/6.0/#sec-number-objects)
