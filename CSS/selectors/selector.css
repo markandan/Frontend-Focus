@@ -1,0 +1,14 @@
+* {
+  color: orange;
+}
+#box1 {	
+  color: blue;
+}
+div {
+  color: green;
+}
+.box {
+	width: 200px;
+	height: 200px;
+	color: red;
+}
