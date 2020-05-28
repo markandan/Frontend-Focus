@@ -31,7 +31,7 @@ body {
 ```HTML
 <div class="box"></div>
 <div class="box2"></div>
-<div>
+<div class="parent">
   <div class="box3"></div>
 </div>
 ```
