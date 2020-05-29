@@ -5,7 +5,7 @@ Explains concepts related to handling numbers in JS
 * [Special Numeric Values](#Special-Numeric-Values)
 * [Binary, Octal & Hexa numbers](#Binary,-Hexadecimal-and-Octal-numbers)
 * [Rounding Number](#rounding-numbers)
-* [Other ways of writing numbers](More-ways-of-writing-numbers)
+* [Other ways of writing numbers](#More-ways-of-writing-numbers)
 * [Static Properties](#static-properties)
 
 ##  Double precision floating-point Numbers
