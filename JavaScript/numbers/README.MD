@@ -279,7 +279,7 @@ So, for the question,the output will be **72000 and 0.0072**
 ```JS
 let a = 72e4;
 let b = 72e-4;
-console.log(a, b); // 72000 and 0.0072
+console.log(a, b); // 720000 and 0.0072
 ```
 
 ##  Static properties
