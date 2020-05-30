@@ -131,10 +131,3 @@ div {
 ```
 
 Above code snippet color will be blue as ID having more precedence than anything else in the given code
-
-### References 
-
-* [Mozilla MDN (Margin)](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
-* [Mozilla MDN (Padding)](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
-* [W3C (Margin)](https://www.w3.org/TR/css-box-3/#margins)
-* [W3C (Padding)](https://www.w3.org/TR/css-box-3/#paddings)
