@@ -1,4 +1,12 @@
 # Selectors
+
+* [Universal Selector](#Universal-Selector)
+* [Type Selector](#Type-Selector)
+* [Class Selector](#Class-Selector)
+* [ID Selector](#ID-Selector)
+* [Combination & Descendent Selector](#Combination-and-descendent-Selector)
+* [Descendent Selector](#Descendent-Selector)
+
 What will be color applied to the div in the following code?
 
 ```CSS
@@ -131,3 +139,53 @@ div {
 ```
 
 Above code snippet color will be blue as ID having more precedence than anything else in the given code
+
+## Combination and Descendant Selectors
+
+What will be color of the <div> and <p> in the Code block 1 and color of <div> and <p> in the Code block 2
+
+```CSS
+body {
+  color: green;
+}
+div.container {
+  color: blue;
+}
+
+.parent .box{
+  color: orange;
+}
+
+```
+```HTML
+<!-- Code Block 1-->
+<div class="container">Content</div>
+<p class="container">Content</p>
+<!-- End of Code Block 1-->
+
+
+<!-- Code Block 2-->
+<div class="parent">
+    <div class="box">Content</div>
+    <div>
+      <p class="box">Content</p>
+    </div>
+</div>
+<!-- End of Code Block 2-->
+```
+
+We can combine type selector and the class selector to restrict the matches to elements of the type with a class mentioned.
+
+If we have type selector followed by the class selector (`Without Spaces`), the type of element with the class only be selected and the values are applied to that element. 
+
+In the example given in Code block 1, only `<div>` content will be of color `blue`, `<p>` will inherit from the body color green. `div.container` selects all `div` elements with class `.container`
+
+## Descendant Selector
+
+The descendant selector or, more accurately, the descendant combinator lets you combine two or more selectors so you can be more specific in your selection method
+
+The color orange will be applied to both `<div>` and `<p>` tags as they both have the class `.box` which is a child element of `.parent`
+
+> Note: There is space between ID selector and a class.
+
+It’s worth noting that the `.box` element doesn’t have to be an immediate child, it can be any levels deep, still the border style would be applied
