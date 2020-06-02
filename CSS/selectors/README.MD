@@ -189,3 +189,27 @@ The color orange will be applied to both `<div>` and `<p>` tags as they both hav
 > Note: There is space between ID selector and a class.
 
 It’s worth noting that the `.box` element doesn’t have to be an immediate child, it can be any levels deep, still the border style would be applied
+
+## Difference between Child Selector and a Descendant selector
+
+In the following code snippet, what will be background applied to second div with the class `.box`
+
+```CSS
+#container > .box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}
+```
+```HTML
+<div id="container">
+  <div class="box">Content 1</div>
+  <div>
+  	  <div class="box">Content 2</div>
+  </div>
+</div>
+```
+
+A child selector is similar to a descendant selector, except it only targets immediate child elements. A child selector is denoted by the symbol `>`.
+
+> There is a difference between the descendant selector and the child selector. Descendant selector element doesn’t have to be an immediate child, it can be any levels deep, still the border style would be applied. Child selector targets inly the immediate child items.
