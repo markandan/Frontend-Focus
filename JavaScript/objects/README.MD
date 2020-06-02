@@ -1,11 +1,11 @@
 # Objects in Javascript
 Explains concepts related to handling objects in JS
 
-* [Objects with constant](#Objects-with-contants)
+* [Objects with constant](#Objects-with-constants)
 
-##  Objects with contants
+##  Objects with constants
 
-What will be the ourput of the following code snippet?
+What will be the output of the following code snippet?
 
 ```JS
 const user = {
@@ -37,7 +37,7 @@ user = {
 
 ## Objects with square brackets
 
-Waht are the valid ways to access propeties with multiple words
+What are the valid ways to access propeties with multiple words
 
 ```JS
 let obj = {

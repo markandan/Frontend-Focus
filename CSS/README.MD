@@ -8,3 +8,5 @@ Basic to advanced concepts in CSS
 * [Margin & Padding](https://github.com/markandan/Frontend-Focus/tree/master/CSS/margins-padding)
 
 * [Borders](https://github.com/markandan/Frontend-Focus/tree/master/CSS/borders)
+
+* [Selectors](https://github.com/markandan/Frontend-Focus/tree/master/CSS/selectors)
