@@ -2,6 +2,8 @@
 Explains concepts related to handling objects in JS
 
 * [Objects with constant](#Objects-with-constants)
+* [Objects with square brackets](#Objects-with-square-brackets)
+* [Property name Limitations](#Property-name-Limitations)
 
 ##  Objects with constants
 
@@ -79,3 +81,40 @@ let bag = {
 
 alert( bag.apple ); // 5 if fruit="apple"
 ```
+
+
+## Property name Limitations
+
+What will be the output of the following code snippet?
+
+```JS
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3,
+  __proto__: 10
+};
+
+console.log(obj.for, obj.let, obj.return, obj.__proto__);
+```
+
+As we know, a variable cannot have a name equal to one of language-reserved words like “for”, “let”, “return” etc.
+
+But for an object property, there’s no such restriction.
+
+In short, there are no limitations on property names. They can be any strings or symbols (a special type for identifiers, to be covered later).
+
+Other types are automatically converted to strings.
+
+```JS
+let obj = {
+  0: "Hello"
+};
+
+console.log(obj[0], console.log(obj["0"])); // both will access the property and print "Hello"
+
+```
+
+In the above example, a number `0` becomes a string `"0"` when used as a property key. Also can use number or a string to access the object key
+
+Only restriction is the special property `__proto__` cannot have non-object values. Even if you assign non-object values for the property, it will be discarded.
