@@ -213,3 +213,52 @@ In the following code snippet, what will be background applied to second div wit
 A child selector is similar to a descendant selector, except it only targets immediate child elements. A child selector is denoted by the symbol `>`.
 
 > There is a difference between the descendant selector and the child selector. Descendant selector element doesn’t have to be an immediate child, it can be any levels deep, still the border style would be applied. Child selector targets inly the immediate child items.
+
+## Sibiling and Adjacent Sibling Selector
+
+What will be the color of the paragraphs and list items in the following code snippet?
+
+```CSS
+body {
+  color: black;
+}
+h2 ~ p {
+   color: blue;
+}
+li + li {
+  color: red;
+}
+```
+```HTML
+<h2>Title</h2>
+<p>Paragraph 1.</p>
+<p>Paragraph 2.</p>
+<p>Paragraph 3.</p>
+<div class="box">
+  <p>Paragraph 4.</p>
+</div>
+<ul>
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+```
+
+To answer this question we need to understand the Sibiling and Adjacent selectors
+
+### Sibling Selector
+
+A sibling selector matches elements based on sibling relationships. That is to say, the selected elements are beside each other in the HTML.
+
+Sibling selectors are denoted by `"~"`
+
+In the example provided, the first three paragraphs will be of color blue, as they are the siblings of `<h2>`. Last Paragraph will be of `body` color (black) as it is not a sibling to `<h2>`.
+
+
+### Adjacent Sibling Selector
+
+An Adjacent sibling selector is similar to general sibling selector. The difference is that the targeted element must be an immediate sibling, not just a general sibling.
+
+In the example provided, the second and third list item will be of color red, as they are the adjacent siblings. First list item is not an adjacent sibiling to another `li` so color red will not be applied
+
+Adjacent Sibling selectors are denoted by `"+"`.
