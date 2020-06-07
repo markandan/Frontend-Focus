@@ -118,3 +118,42 @@ console.log(obj[0], console.log(obj["0"])); // both will access the property and
 In the above example, a number `0` becomes a string `"0"` when used as a property key. Also can use number or a string to access the object key
 
 Only restriction is the special property `__proto__` cannot have non-object values. Even if you assign non-object values for the property, it will be discarded.
+
+
+## Call by Reference
+
+What will be output of the following code?
+
+```JS
+let obj1 = {
+  name: 'JS Object'
+}
+
+let obj2 = {
+  name: 'JS Object'
+}
+
+let obj3 = obj1;
+
+console.log(obj1 == obj2, obj1 === obj2, obj1 == obj3, obj1 === obj3);
+```
+
+Objects are called by reference in JS. When an object variable is copied – the reference is copied, the object is not duplicated.
+
+In the example, if we change, the value of `obj3`
+
+```JS
+let obj1 = {
+  name: 'JS Object'
+}
+
+obj3 = obj1;
+obj3.name = 'Updated';
+console.log(obj1.name, obj3.name);
+```
+
+This will print `Updated` for both obj1.name and obj3.name as in JS the objects are called by reference.
+
+We will not be able to compare two objects, even though both the objects key and value are similar. In the example given, `obj1` and `obj2` have similar key and values, but if we check equality it will return false. 
+
+If we compare the objects, when the value is assigned from the another object, it will return true as both point to the same reference.
