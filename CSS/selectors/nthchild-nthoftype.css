@@ -1,0 +1,6 @@
+div p:nth-child(3) {
+  color: blue;
+}
+div p:nth-of-type(4) {
+  color: blue;
+}

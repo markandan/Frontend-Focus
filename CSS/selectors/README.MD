@@ -262,3 +262,58 @@ An Adjacent sibling selector is similar to general sibling selector. The differe
 In the example provided, the second and third list item will be of color red, as they are the adjacent siblings. First list item is not an adjacent sibiling to another `li` so color red will not be applied
 
 Adjacent Sibling selectors are denoted by `"+"`.
+
+## nth-child and nth-of-type
+
+Which child items will be of color blue in the following code snippet?
+
+```HTML
+<div>
+  <p>Child 1</p>
+  <p>Child 2</p>
+  <p>Child 3</p>
+  <div>Child 4</div>
+  <p>Child 5</p>
+</div>
+```
+```CSS
+div p:nth-child(3) {
+  color: blue;
+}
+div p:nth-of-type(4) {
+  color: blue;
+}
+```
+
+There are two Pseudo classes used in the example. We need to understand the difference to answer the question.
+
+The `nth-child()` pseudo-class is used to match an element based on a number, which represents the element’s position amongst it’s siblings. The `:nth-child()` selector in CSS is used to match the elements based on their position in a group of siblings. It matches every element that is the nth child.
+
+The `nth-of-type()` in CSS Selector is used to style only those elements which are the nth number of child of its parent element. 
+
+Both `nth-child()` and `nth-of-type()` takes a argument, that represents the pattern for matching elements. It can be odd, even or in a functional notation and selects the child element based on the argument.
+
+* **odd:** It represents elements whose position is odd in a series: 1, 3, 5, etc.
+* **even:** It represents the elements whose position is even in a series: 2, 4, 6, etc.
+* **functional notation (<An+B>):** It represents elements whose position of siblings matches the pattern An+B, for every positive integer or zero value of n.
+
+> Note: There is no difference between `nth-child` and `nth-of-type` when all the siblings is of same type.
+
+In the example, Child 3 and Child 5 will be of color blue.
+
+p:nth-child(3) will select the 3rd child which is `<p>` item.
+p:nth-of-type(4) will select the 4th `<p>` element which is Child 5 in the given example.
+
+> Note: p:nth-child(4) will not affect any element (in the given example) as `<p>` is not the fourth child of the parent `<div>`
+
+There are few similar pseudo classes
+* first-child
+* fitst-of-type
+* last-child
+* last-of-type
+* nth-last-child
+* nth-last-of-type
+* only-child
+* only-of-type
+
+To read more use the [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
