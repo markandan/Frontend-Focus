@@ -157,3 +157,31 @@ This will print `Updated` for both obj1.name and obj3.name as in JS the objects 
 We will not be able to compare two objects, even though both the objects key and value are similar. In the example given, `obj1` and `obj2` have similar key and values, but if we check equality it will return false. 
 
 If we compare the objects, when the value is assigned from the another object, it will return true as both point to the same reference.
+
+## Object cloning
+
+What will be the output of the following code snippet?
+
+```JS
+let obj1 = {
+  name: "JavaScript"
+  address: {
+    street: "Street",
+    country: "India"
+  }
+}
+let clone = Object.assign({}, obj1);
+clone.address.street = "Street Updated";
+console.log(obj1.street.address, clone.address.street);
+```
+`Object.assign()` creates a clone of the object. 
+**Syntax**
+> Object.assign(dest, src1, src2, src3...)
+
+* The first argument dest is a target object.
+
+* Further arguments src1, ..., srcN (can be as many as needed) are source objects. It copies the properties of all source objects src1, ..., srcN into the target dest. In other words, properties of all arguments starting from the second are copied into the first object.
+
+`Object.assign()` doesnot create a deep clone. Means, if a key contains an object as value, it does not create a copy rather, the reference is copied.
+
+In the example given, address is an object value and the reference is copied, so both the values are changed and `Street Updated` will be printed for both.
