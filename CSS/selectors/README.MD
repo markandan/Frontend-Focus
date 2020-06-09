@@ -317,3 +317,58 @@ There are few similar pseudo classes
 * only-of-type
 
 To read more use the [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
+## Pseudo Elements
+
+Following code uses Pseudo element (`::after`) to create a right arrow. Some property is missing, so the arrow is not displayed. What is the property missing?
+```CSS
+<style>
+.box {
+  width: 200px;
+  height: 200px;
+  background: green;
+  position: relative;
+}
+.box::after {
+  border: 10px solid transparent;
+  border-left-color: green;
+  position: absolute;
+  left: 100%;
+  top: calc(50% - 5px);
+}
+</style>
+```
+```HTML
+<div class="box">
+</div>
+```
+
+The `::before` pseudo-element, like its sibling `::after`, adds content (text or a shape) to another HTML element. Again, this content is not actually present in the DOM but can be manipulated as if it were. And the content property needs to be declared in the CSS.
+
+We can Generate content via CSS is achieved by combining the `content` CSS property with the `::before` or `::after` pseudo-element.
+
+This `content` may be either plain text or a container that we manipulate with CSS to display a graphic shape or decorative element. 
+
+Generated content shouldn’t be used for important copy or text, due to the following reasons:
+
+* It won’t be accessible to some screen readers.
+* It won’t be selectable.
+* If generated content uses superfluous content for the sake of decoration, screen readers that do support CSS generated content will read it out loud, thus making the UX even worse.
+
+We can use data attribute as part of content.
+
+In the example, `content` property is missing. We need to add `content: ''` (empty text) to make sure the triangle is displayed
+
+> Note: As a rule, double colons (::) should be used instead of a single colon (:). This distinguishes pseudo-classes from pseudo-elements. However, since this distinction was not present in older versions of the W3C spec, most browsers support both syntaxes for the original pseudo-elements.
+
+You can look into csstooltip html and css files for the example tooltip using `::after` and `data` attribute
+
+There are various Pseudo elements available
+* before
+* after
+* first-letter
+* first-line
+* placeholder
+* selection
+
+To read more about the Psuedo elements use [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
