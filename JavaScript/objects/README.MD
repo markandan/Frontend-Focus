@@ -164,7 +164,7 @@ What will be the output of the following code snippet?
 
 ```JS
 let obj1 = {
-  name: "JavaScript"
+  name: "JavaScript",
   address: {
     street: "Street",
     country: "India"
@@ -172,7 +172,7 @@ let obj1 = {
 }
 let clone = Object.assign({}, obj1);
 clone.address.street = "Street Updated";
-console.log(obj1.street.address, clone.address.street);
+console.log(obj1.address.street, clone.address.street);
 ```
 `Object.assign()` creates a clone of the object. 
 **Syntax**
