@@ -4,6 +4,8 @@ Explains concepts related to handling objects in JS
 * [Objects with constant](#Objects-with-constants)
 * [Objects with square brackets](#Objects-with-square-brackets)
 * [Property name Limitations](#Property-name-Limitations)
+* [Call by Reference](#call-by-reference)
+* [Object cloning](#Object-cloning)
 
 ##  Objects with constants
 
@@ -185,3 +187,27 @@ console.log(obj1.address.street, clone.address.street);
 `Object.assign()` doesnot create a deep clone. Means, if a key contains an object as value, it does not create a copy rather, the reference is copied.
 
 In the example given, address is an object value and the reference is copied, so both the values are changed and `Street Updated` will be printed for both.
+
+## Object.preventExtensions()
+
+What will be the output of the code snippet? 
+Assumption: Not running in `strict` mode
+```JS
+let obj = {
+  name: 'JS'
+};
+Object.preventExtensions(obj);
+obj.age = 12;
+delete obj.name;
+console.log(obj);
+```
+
+Object.preventExtensions makes it impossible to add properties to an Object.
+
+If we add after calling `preventExtensions` method, it will fail silently in sloppy mode.
+
+> Note: If we try to add a property after calling preventExtensions method in strict mode, it results in error.
+
+You will be able to delete the property though.
+
+> Note: After deleting the key, its not possible to add it back again.
