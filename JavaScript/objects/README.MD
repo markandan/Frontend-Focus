@@ -6,6 +6,8 @@ Explains concepts related to handling objects in JS
 * [Property name Limitations](#Property-name-Limitations)
 * [Call by Reference](#call-by-reference)
 * [Object cloning](#Object-cloning)
+* [Object.preventExtensions()](#Object.preventExtensions())
+* [Object.seal()](#Object.seal())
 
 ##  Objects with constants
 
@@ -211,3 +213,30 @@ If we add after calling `preventExtensions` method, it will fail silently in slo
 You will be able to delete the property though.
 
 > Note: After deleting the key, its not possible to add it back again.
+
+To check whether obj is extensible: Object.isExtensible(obj);
+
+## Object.seal()
+
+What will be the output of the code snippet? 
+Assumption: Not running in `strict` mode
+```JS
+let obj = {
+  name: 'JS'
+};
+Object.seal(obj);
+obj.age = 12;
+obj.name = "updated";
+delete obj.name;
+console.log(obj);
+```
+
+Object.seal makes all properties "unconfigurable". The latter means that the attributes of properties can’t be changed, any more. Read-only properties stay read-only, enumerable properties stay enumerable, etc.
+
+If we add a property or delete a property, after calling `seal` method, it will fail silently in sloppy mode.
+
+> Note: If we try to add a property or delete a property after calling seal method in strict mode, it results in error.
+
+You'll be able to change the value of the property. So the output of the code would be `{name: 'updated'}`
+
+To check whether obj is sealed: Object.isSealed(obj);
