@@ -30,4 +30,4 @@ body {
 
 In the example, the output will be 21px and 24px for child1 and child2 respectively.
 
-> Note: `em` and `rem` will return same value if any of the elements other than the root element have a `font-size` attribute
+> Note: `em` and `rem` will return same value if any of the elements other than the root element doesnot have a `font-size` attribute
