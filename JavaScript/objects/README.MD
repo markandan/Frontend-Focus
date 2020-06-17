@@ -240,3 +240,28 @@ If we add a property or delete a property, after calling `seal` method, it will 
 You'll be able to change the value of the property. So the output of the code would be `{name: 'updated'}`
 
 To check whether obj is sealed: Object.isSealed(obj);
+
+## Object.freeze()
+
+What will be the output of the code snippet? 
+Assumption: Not running in `strict` mode
+```JS
+let obj = {
+  name: 'JS'
+};
+Object.freeze(obj);
+obj.age = 12;
+obj.name = "updated";
+delete obj.name;
+console.log(obj);
+```
+
+Object.freeze makes all properties non-writable and seals the object. That is, obj is not extensible, all properties are read-only and there is no way to change that.
+
+If we add a property or delete a property, and change the value of a property, after calling `freeze` method, it will fail silently in sloppy mode.
+
+> Note: If we try to add a property or delete a property, and change the value of a property, after calling seal method in strict mode, it results in error.
+
+You'll be not able to change the value of the property. So the output of the code would be `{name: 'JS'}`
+
+To check whether obj is sealed: Object.isFrozen(obj);
