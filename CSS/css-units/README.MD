@@ -50,7 +50,7 @@ What will be the width of the child1 and child2?
 ```
 ```CSS
 .parent {
-  width: 200px;
+  width: 100px;
 }
 .child {
   height: 100px;
