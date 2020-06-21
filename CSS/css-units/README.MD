@@ -72,3 +72,18 @@ What will be the width of the child1 and child2?
 In the example, the output will be 200px and width of the viewport for child1 and child2 respectively.
 
 > Note: `percentage` and `vw` will be same if the parent is element is a block element and no width set for parent element.
+
+## vmin and vmax
+What will be the 1vmin and 1vmax values of the viewport 1024px wide x 768px height?
+
+`vmin` and `vmax` are the units related to viewport
+
+`vmin` uses the browser height or width whichever is smaller. If the height of the browser window is less than its width, 1vmin will be equivalent to 1vh. If the width of the browser is less than it’s height, 1vmin is equvialent to 1vw.
+
+`vmax` uses the browser height or width whichever is greater. If the height of the browser window is greater than its width, 1vmin will be equivalent to 1vh. If the width of the browser is greater than it’s height, 1vmin is equvialent to 1vw.
+
+> Note: `vmin` and `vmax` is an excellent substitute for, or addition to, CSS orientation media queries, since they respond immediately to the aspect ratio of the screen
+
+One usecase would be setting the font size of the header. Measured in vmin, the size of the header text won’t get larger or smaller in a fully-expanded browser that is narrowed, since the unit responds to viewport height. 
+
+Answer to the question is 1vmin = 1% of the 768px and 1vmax = 1% of 1024px.
