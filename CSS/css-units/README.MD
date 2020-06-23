@@ -87,3 +87,29 @@ What will be the 1vmin and 1vmax values of the viewport 1024px wide x 768px heig
 One usecase would be setting the font size of the header. Measured in vmin, the size of the header text won’t get larger or smaller in a fully-expanded browser that is narrowed, since the unit responds to viewport height. 
 
 Answer to the question is 1vmin = 1% of the 768px and 1vmax = 1% of 1024px.
+
+## Absolute units
+What are the valid absolute CSS Units?
+* px
+* pc
+* cm
+* mm
+* all of the above
+
+Units that are `absolute` are the same size regardless of the parent element or window size.  Absolute units can be less favourable for responsive sites because they don't scale when the screen size changes.
+
+Following are the absolute units available in CSS
+
+| Unit  | Name | Equivalent to | Example |
+|---|---|---|---|
+|px|Pixels|1px = 1/96th of 1 inch(96px = 1 inch) |font-size: 12px;|
+|pt|Points|1/72 of 1 inch (72pt = 1 inch)|font-size: 12px;|
+|pc|picas|12pt = 1pc|font-size: 1.2pc;|
+|mm|Millimeter|1mm = 1/10th of 1cm|font-size: 4mm;|
+|cm|Centimeter|1cm = 96px/2.54|font-size: 0.5cm;|
+|in|Inches|1in = 2.54cm = 96px|font-size: 0.2in;|
+
+Pixels (px) are typically the most popular absolute unit for screens. Centimeters, millimeters, and inches are more common for print and you may not have even known they were options!
+
+### References
+* [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
