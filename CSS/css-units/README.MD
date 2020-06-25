@@ -113,3 +113,42 @@ Pixels (px) are typically the most popular absolute unit for screens. Centimeter
 
 ### References
 * [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+
+## percentage values in height and width
+
+What will be the height and width of div in the code snippet
+
+```CSS
+div {
+  width: 100%;
+  height: 100%;
+}
+```
+```HTML
+<html>
+  <body>
+    <div>Content</div>
+  </body>
+</html>
+```
+`%` is relative to parent.
+
+By default width of a block element is 100% of the screen width
+
+The percentage is calculated with respect to the height of the generated box's containing block. If the height of the containing block is not specified explicitly, and this element is not absolutely positioned, the value computes to 'auto' (i.e., it depends on content height). A percentage height on the root element is relative to the initial containing block.
+
+To make the `div` take 100% of the window using percentage value, then we need to give `height: 100%` for all the elements starting from root element, (ie.,`html`, `body`, etc...). Following code will set the div's height to 100% of screen height
+
+```HTML
+<html>
+  <body>
+    <div>Content with 100% of window height</div>
+  </body>
+</html>
+```
+
+```CSS
+html, body, div {
+  height: 100%;
+}
+```
