@@ -67,3 +67,35 @@ Inside `demo2()` there is a declaration of variable with same name `a`. It refer
 > Note: We can declare a local variable with the same name as global variable. JS treats both as different.
 
 Answer to the question is `30, 20 and 30`
+
+## Declaring using `let`
+What will be output of the code snippet?
+
+```JS
+let a = 10;
+console.log(a);
+if(true) {
+  console.log(b);
+  let b = 20;
+}
+console.log(b);
+```
+
+By declaring the variable using `let` keyword, the scope of the vairable is block scope, so it'll be accessible between the {} in which it is declared.
+
+There is one key difference how this behaves between var and let/const though.
+
+* In case of var, after creating variable definitions, before executing line by line each of the variables is initialized with the undefined value.
+* In case of let/const, the initialization to undefined does not happen until the line where the declaration actually happens. And only if there is no assignment immediately. On the lines above the variable is in the Temporal Dead Zone and accessing it results in Reference Error.
+
+One of the advantages of let over var is also pollution of global scope. When you declare a variable using var on the root level, it is automatically declared on the global object:
+
+```JS
+var foo = 42;
+console.log(window.foo) //42
+
+let var2 = 42;
+console.log(window.var2) //undefined
+```
+
+In the above code, `b` is not accessible outside the if block and also before the initialization, so the value will be 10 and followed by reference error. 
