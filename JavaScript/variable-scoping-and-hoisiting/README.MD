@@ -1,4 +1,4 @@
-# Variable Scoping in JS
+# Variable Scoping and Hoisting in JS
 Explains the scoping of variables in JS
 
 ## Declaring using `var`
@@ -99,3 +99,42 @@ console.log(window.var2) //undefined
 ```
 
 In the above code, `b` is not accessible outside the if block and also before the initialization, so the value will be 10 and followed by reference error. 
+
+
+## Hoisting of function
+
+What will be output of the code snippet?
+
+```JS
+demo();
+demo2();
+function demo() {
+  console.log("Demo")
+}
+
+var demo2 = function() {
+  console.log("Demo2");
+}
+```
+
+Functions like variables in JavaScript are, in a sense, "hoisted" (or "lifted") to the top of the file. Function is hoisted along with the definition of the function.
+
+If we declare a function and assign it to a variable using `var` or `let` or `const` keyowrd, then it will be treated as a variable having a value `Function`. You will not be able to call the function declared as variable before the initialization. It'll result in error.
+
+
+The above code will be interpreted as 
+
+```JS
+function demo() {
+  console.log("Demo")
+}
+var demo2;
+demo();
+demo2(); //Error since demo2 is a variable and not having a value
+
+demo2 = function() {
+  console.log("Demo2");
+}
+```
+
+The above code will display `Demo` in the console, followed by an Error statign demo2 is not a function.
