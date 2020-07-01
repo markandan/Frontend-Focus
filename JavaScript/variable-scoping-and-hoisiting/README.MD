@@ -138,3 +138,25 @@ demo2 = function() {
 ```
 
 The above code will display `Demo` in the console, followed by an Error statign demo2 is not a function.
+
+## Variable Redeclaration
+
+What will be the output of the following code snippet?
+
+```JS
+function demo(){
+  var a = 10;
+  var a = 20;
+  console.log(a);
+  let b = 20;
+  let b = 30;
+  console.log(b);
+}
+demo();
+```
+
+With `var`, we can redeclare a variable any number of times. If we use `var` with an already-declared variable, it’s just ignored:
+
+With `let`, A variable should be declared only once. A repeated declaration of the same variable is an error. 
+
+The output of the above code will result in error. It'll not even print the `console`. As the functions are hoisted, as soon as the function declaration occurs, it hoists the variables inside the function that result in error as we are trying to redeclare the variable `b` using let.
