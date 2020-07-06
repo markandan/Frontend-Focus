@@ -47,3 +47,30 @@ By default, a `block` element occupies the entire space of its parent element (c
 Block elements also respect the width and height properties. So the width of the element would be 200px, but each element blocks the entire line, so everything comes one after the other. Each will start against the start edge of the containing block. So, there'll be space to the right of the element
 
 Vertical margins of the block elements are collapsed and its called `margin collapsing`. Please refer [here](https://github.com/markandan/Frontend-Focus/tree/master/CSS/collapse-margin)
+
+## padding and margin for inline elements
+
+Will the padding and margin be applied for the span in the code block?
+```CSS
+span {
+  padding: 20px;
+  margin: 20px;
+}
+div {
+  width: 200px;
+}
+```
+```HTML
+<div>
+  Lorem ipsum dolor <span>sit amet</span>, consectetur adipiscing elit. Aliquam quis convallis lectus. Nam ligula elit, vestibulum pharetra vehicula sed, placerat sed felis. Nunc sed lorem ut urna pellentesque gravida vel eu est. Vestibulum volutpat euismod mattis. Pellentesque nec suscipit nibh. Nullam hendrerit et nibh ut placerat. Duis sit amet pharetra ipsum. Curabitur lacinia aliquam gravida.
+</div>
+```
+`inline` elements as a name suggests are those which only occupy the space bounded by the tags defining the element, instead of breaking the flow of the content.
+
+When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element, but you cannot add height to the top or bottom padding or margin of an inline element.
+
+The padding on the top and bottom of the `inline` elements will be applied, but the flow will not break, causing the elements to overlap each other.
+
+When an `inline` box is split across more than one line, it’s still logically a single box. This means that any horizontal padding, border, or margin is only applied to the start of the first line occupied by the box, and the end of the last line.
+
+Int he above example, the highlighted span is split across 2 lines. Its horizontal padding doesn’t apply to the end of the first line or the beginning of the second line. Also, any vertical padding, border, or margin applied to an element will not push away elements above or below it. The content will be overlapped in the second line
