@@ -74,3 +74,29 @@ The padding on the top and bottom of the `inline` elements will be applied, but 
 When an `inline` box is split across more than one line, it’s still logically a single box. This means that any horizontal padding, border, or margin is only applied to the start of the first line occupied by the box, and the end of the last line.
 
 Int he above example, the highlighted span is split across 2 lines. Its horizontal padding doesn’t apply to the end of the first line or the beginning of the second line. Also, any vertical padding, border, or margin applied to an element will not push away elements above or below it. The content will be overlapped in the second line
+
+## inline-block elements
+
+What will be the width of the span in the code snippet?
+
+```CSS
+span {
+  width: 200px;
+  background: red;
+  display: inline-block;
+}
+div {
+  width: 500px;
+}
+```
+```HTML
+<div>
+<span>Lorem Ipsum</span>More content
+</div>
+```
+
+We can change the type of element to `inline-block` using the `display` property.
+
+`inline-block` as the name suggested inhertis some properties from inline and some from block.
+
+It honors the width, padding, and margin and push the content, similar to `block` elements, does not add a line-break after the element, so the element can sit next to other elements. That means, the content will follow the `inline-block` elements.
