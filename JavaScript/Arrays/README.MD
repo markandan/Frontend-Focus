@@ -25,3 +25,19 @@ Arrays are zero-indexed, i.e., first element can be accessed as
   console.log(arr[2]); // prints true
   console.log(arr[3]); // alerts 'hello'
 ```
+
+## Equality of Arrays
+
+What will be the result of the code snippet?
+```JS
+let a = [1,2,3,4];
+let b = [1,2,3,4];
+
+console.log(a == b, a === b);
+```
+
+An array is a special kind of object. The square brackets used to access a property `arr[0]` actually come from the object syntax. That’s essentially the same as `obj[key]`, where arr is the object, while numbers are used as keys.
+
+Arrays extend objects providing special methods to work with ordered collections of data and also the length property. But at the core it’s still an object.
+
+The engine tries to store Array's elements in the contiguous memory area, one after another.
