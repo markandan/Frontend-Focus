@@ -77,3 +77,19 @@ console.log(a); // 1, 2, 3, 4
 ```
 
 `push()` and `unshift()` functions take `n` number of arguments and adds those to the array. 
+
+## push() & pop() vs unshift() & shift() performance
+
+The `shift()` & `unshift()` operation must do the following things:
+* Add/Remove the element with the index 0.
+* Move all elements to the left/right, 
+* Renumber elements index.
+* Update the length property.
+
+The `push()` & `pop()` operation must do the following things:
+* Add/Remove the element in the end.
+* Update the length property.
+
+So `push()` and `pop()` is performant compared to `unshift()` and `shift()`.
+
+> Note: The complexity of `shift()` & `unshift()` is propotional to number of elements in the array.
