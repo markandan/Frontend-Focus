@@ -100,3 +100,29 @@ We can change the type of element to `inline-block` using the `display` property
 `inline-block` as the name suggested inhertis some properties from inline and some from block.
 
 It honors the width, padding, and margin and push the content, similar to `block` elements, does not add a line-break after the element, so the element can sit next to other elements. That means, the content will follow the `inline-block` elements.
+
+## inline-block white spacing issue
+
+What will be the alignment of the boxes in the code snippet?
+```CSS
+.box {
+    width: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: 100px;
+    background: green;
+}
+```
+```HTML
+<div class="container">
+   <div class="box"></div>
+   <div class="box"></div>
+   <div class="box"></div>
+   <div class="box"></div>
+</div>
+```
+`inline-block` elements add some white-space at the end of each element. This results in some pixels (4px mostly, but depends on the browser settings for white-space) for each element. The output of the example would be, three boxes align horizontally and one box comes in the second row
+
+To resolve the whitespace, there are several workarounds. To read more about the white spaces, click [here](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace)
