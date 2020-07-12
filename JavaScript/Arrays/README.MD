@@ -41,3 +41,39 @@ An array is a special kind of object. The square brackets used to access a prope
 Arrays extend objects providing special methods to work with ordered collections of data and also the length property. But at the core it’s still an object.
 
 The engine tries to store Array's elements in the contiguous memory area, one after another.
+
+## Queue and Stack using Array
+
+Which data structure concept can be implement using Arrays in JS?
+
+Arrays in JavaScript can work both as a queue and as a stack. They allow you to add/remove elements both to/from the beginning or the end.
+
+Stacks are based on the `LIFO` principle, i.e., the element inserted at the last, is the first element to come out of the list. Queues are based on the `FIFO` principle, i.e., the element inserted at the first, is the first element to come out of the list.
+
+Arrays have following built-in functions 
+* push()
+* pop()
+* shift()
+* unshift()
+
+`push()` and `pop()` methods will work with the end of the array
+
+```JS
+let a = [1, 2, 3, 4];
+a.push(5);
+console.log(a); // 1, 2, 3, 4, 5
+a.pop();
+console.log(a); // 1, 2, 3, 4
+```
+
+`shift()` and `unshift()` methods will work with the beginning of the array
+
+```JS
+let a = [1, 2, 3, 4];
+a.unshift(5);
+console.log(a); // 5, 1, 2, 3, 4
+a.shift();
+console.log(a); // 1, 2, 3, 4
+```
+
+`push()` and `unshift()` functions take `n` number of arguments and adds those to the array. 
