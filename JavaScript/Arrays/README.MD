@@ -93,3 +93,19 @@ The `push()` & `pop()` operation must do the following things:
 So `push()` and `pop()` is performant compared to `unshift()` and `shift()`.
 
 > Note: The complexity of `shift()` & `unshift()` is propotional to number of elements in the array.
+
+## toString
+
+What will be the output of the code snippet?
+```JS
+console.log([1] + 1);
+console.log([1,2] + 1);
+```
+
+Arrays have their own implementation of `toString()`, it will return a string with the array values as comma separated. 
+
+Arrays do not have `Symbol.toPrimitive`, neither a viable `valueOf`, they implement only toString conversion.
+
+So, [] = "", [1] = "1", [1, 2] = "1,2" and so on...
+
+If `+` sign is used along with the array, it converts the array to string and `+` acts as concatenation operator. The example given above will result in two strings `"11"` and `"1,21"`
