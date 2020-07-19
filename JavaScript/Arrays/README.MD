@@ -130,3 +130,30 @@ console.log(arr[0].id, arr2[0].id);
 In the above statement, since arr and arr2 are two different copies, the first statement returns `false`. `map()` does a shallow copy, meaning the objects are referenced and not copied, so changing one Array's object will reflect in the other array as well.
 
 > Note: Array is another type of object and it is called by reference.
+
+
+## map() vs filter()
+
+What will be output of the following code snippet?
+```JS
+let arr =  [{ id: 1, name: 'a'}, { id: 2, name: 'b'}, { id: 3, name: 'a'}];
+
+let arr2 = arr.map(arrElement => {
+  if(arrElement.id % 2 == 1) {
+    return arrElement;
+  }
+})
+
+let arr3 = arr.filter(arrElement => {
+  if(arrElement.id % 2 == 1) {
+    return arrElement;
+  }
+})
+console.log(arr2, arr3);
+```
+`map()` will iterate to all the elements and returns a value. It creates a copy of any array.
+`filter()` will filter the array based on the condition and returns only the matching records.
+
+If condition is used in `map()` method, it returns the value based on condition and for other elements it would return `undefined`
+
+`map()` will return an equal length as original array, while `filter()` will return the subset of the original array depending upon the condition.
