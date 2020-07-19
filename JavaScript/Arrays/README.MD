@@ -109,3 +109,24 @@ Arrays do not have `Symbol.toPrimitive`, neither a viable `valueOf`, they implem
 So, [] = "", [1] = "1", [1, 2] = "1,2" and so on...
 
 If `+` sign is used along with the array, it converts the array to string and `+` acts as concatenation operator. The example given above will result in two strings `"11"` and `"1,21"`
+
+## map() in JS
+
+What will be output of the code snippet?
+
+```JS
+let arr =  [{ id: 1, cat: 'a'}, { id: 2, cat: 'b'}, { id: 3, cat: 'a'}];
+
+let arr2 = arr.map(arrElement => arrElement)
+console.log(arr === arr2);
+arr2[0].id = 12;
+console.log(arr[0].id, arr2[0].id);
+```
+
+`map()` will iterate to all the elements and returns a value. It creates a copy of any array.
+
+`map()` will do only a shallow copy of an Array. The objects inside the array are not copied, it references the same memory location.
+
+In the above statement, since arr and arr2 are two different copies, the first statement returns `false`. `map()` does a shallow copy, meaning the objects are referenced and not copied, so changing one Array's object will reflect in the other array as well.
+
+> Note: Array is another type of object and it is called by reference.
