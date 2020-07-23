@@ -157,3 +157,38 @@ console.log(arr2, arr3);
 If condition is used in `map()` method, it returns the value based on condition and for other elements it would return `undefined`
 
 `map()` will return an equal length as original array, while `filter()` will return the subset of the original array depending upon the condition.
+
+## concat()
+
+What will be the output of the code snippet?
+
+```JS
+let arr = [1, 2];
+
+let arrayLike = {
+  0: "something",
+  length: 1
+};
+
+let arr2 = arr.concat(arrayLike);
+console.log(arr2);
+```
+Arrays as we have seen above accepts any data type, so we can `concat()` another type, in this case it would be object. 
+
+The output of the example would be `[1, 2, [object, object]]`.
+
+But if an array-like object has a special `Symbol.isConcatSpreadable` property, then it’s treated as an array by concat: its elements are added instead
+
+```JS
+let arr = [1, 2];
+
+let arrayLike = {
+  0: "something",
+  1: "else",
+  [Symbol.isConcatSpreadable]: true,
+  length: 2
+};
+
+let arr2 = arr.concat(arrayLike);
+console.log(arr2); // [1, 2, "something", "else"]
+```
